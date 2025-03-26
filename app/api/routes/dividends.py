@@ -3,7 +3,7 @@ from typing import Optional
 import traceback
 import uuid
 
-from app.api.deps import get_api_key
+from app.core.auth import get_api_key
 from app.db.database import get_db
 from app.core.blockchain import BitensorClient
 from app.worker import analyze_sentiment_and_stake

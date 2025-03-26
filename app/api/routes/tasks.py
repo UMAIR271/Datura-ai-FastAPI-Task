@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Depends, status
+from fastapi import APIRouter, HTTPException, Depends, status, Query
 from app.core.auth import get_api_key
 from app.core.config import settings
 import redis
@@ -7,7 +7,7 @@ import json
 router = APIRouter()
 
 @router.get("/{task_id}")
-async def get_task_status(task_id: str, api_key: str = Depends(get_api_key)):
+async def get_task_by_id(task_id: str, api_key: str = Depends(get_api_key)):
     """
     Get the status of a background task
     
@@ -69,3 +69,24 @@ async def get_task_status(task_id: str, api_key: str = Depends(get_api_key)):
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Error retrieving task status: {str(e)}"
         )
+
+@router.get("/status")
+async def get_task_status(
+    task_id: str = Query(..., description="Task ID to check status"),
+    api_key: str = Depends(get_api_key)
+):
+    """
+    Get status of a background task.
+    """
+    # For development, return mock data
+    return {
+        "task_id": task_id,
+        "status": "COMPLETED",
+        "result": {
+            "sentiment_score": 0.75,
+            "action": "STAKE",
+            "netuid": 18,
+            "hotkey": "5FFApaS75bv5pJHfAp2FVLBj9ZaXuFDjEypsaBNc1wCfe52v",
+            "mock_data": True
+        }
+    }
