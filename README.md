@@ -180,6 +180,6 @@ MIT License
 
 Watch the application in action:
 
-- [Application Overview and Setup](https://www.screencapture.com/915483d9-8828-4b1b-b96c-19ae0d5d3e0b)
-- [API Endpoints Demonstration](https://www.screencapture.com/a5f740bc-0423-4363-abae-ffd6634b7062)
-- [Sentiment Analysis and Staking Flow](https://www.screencapture.com/f4f37ca2-3ac5-4b48-ad84-48e4efcdf565)
+- https://www.screencapture.com/915483d9-8828-4b1b-b96c-19ae0d5d3e0b
+- https://www.screencapture.com/a5f740bc-0423-4363-abae-ffd6634b7062
+- https://www.screencapture.com/f4f37ca2-3ac5-4b48-ad84-48e4efcdf565
